@@ -52,35 +52,30 @@ var swiper = new Swiper(".mySwiper", {
 // WOW JS
   new WOW().init();
 
-  // var menu_chinh=document.querySelector(".menu_chinh");
-  // console.log(menu_chinh);
-  // $(document).ready(function() {
-  //   $(window).scroll(function(){
-  //     if($(this).scrollTop() ) {
-  //       $(menu_chinh).addClass("sticky-header");
-  //     }
-  //     else{
-  //       $(menu_chinh).removeClass("sticky-header");
-  //     }
-  //   })
-  // });
 
-  // Chờ DOM được tải xong
+
+
+ 
+// Header fixed
   document.addEventListener("DOMContentLoaded", function() {
-    const header = document.querySelector('.menu_chinh');
+    const topHeader = document.querySelector('.tieude_tren');
+    const mainHeader = document.querySelector('.menu_chinh');
+    const headerHeight = topHeader.offsetHeight;
     let lastScrollY = window.scrollY;
 
     window.addEventListener('scroll', () => {
-      if (window.scrollY > lastScrollY) {
-        // Khi cuộn xuống, ẩn header
-        header.classList.add('hidden');
-        header.classList.remove('sticky');
+      if (window.scrollY > headerHeight) {
+        topHeader.classList.add('hide');
+        mainHeader.classList.add('sticky');
       } else {
-        // Khi cuộn lên, hiện header
-        header.classList.add('sticky');
-        header.classList.remove('hidden');
+        topHeader.classList.remove('hide');
+        mainHeader.classList.remove('sticky');
       }
-      // Cập nhật vị trí cuộn cuối cùng
       lastScrollY = window.scrollY;
     });
   });
+
+// Header fixed
+
+  
+

@@ -57,15 +57,23 @@
   display: none;
 }
 
-/* .menu_chinh {
-  position: relative;
-  width: 100%;
+.menu_chinh {
+  transition: top 0.3s ease-in-out;
+}
+
+.sticky {
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-} */
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hide {
+  transform: translateY(-100%);
+}
 
 .menu_chinh .noidung_menu_chinh,
 .noidung_menu_chinh .noidung_trai_menu_chinh,
@@ -690,7 +698,7 @@
 /* Footer */
 .trangchu_footer {
   background-color: var(--black-color);
-  padding: 100px;
+  padding-top: 100px;
 }
 .trangchu_footer p,
 .trangchu_footer a {
@@ -795,6 +803,7 @@ a.tienich_email-btn {
   z-index: 1;
 }
 .footer_list_social li a i {
+  color: #000;
 }
 .footer_list_social li:hover a i {
   color: #fff;
